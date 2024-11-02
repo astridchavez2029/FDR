@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('imagen/fondoo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+.titulo-header {
+    font-size: 36px;
+    color: #00bfff;
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #1e90ff;
+    animation: flotar 3s ease-in-out infinite;
+    margin: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover, .active {
+    background-color: rgba(128, 206, 214, 0.5);
+    color: #ffffff;
+}
+
+.tabla-nubes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 50px auto;
+}
+
+.nube {
+    background-color: rgba(240, 248, 255, 0.9);
+    border-radius: 50%;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.nube:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nube h2 {
+    margin-top: 0;
+    color: #005b96;
+    font-size: 24px;
+}
+
+.nube h3 {
+    color: #007bff;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+
+    .nube {
+        margin: 20px;
+        text-align: center;
+    }
+    
+    .nube-imagen {
+        max-width: 100%;
+        border-radius: 15px;
+    }
+    footer {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: relative; 
+        width: 100%;
+}
+
+@media (max-width: 768px) {
+    .tabla-nubes {
+        grid-template-columns: 1fr;
+    }
+}
+.galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.galeria-imagenes img {
+    width: 100%; /* Asegura que las imágenes ocupen el ancho de su contenedor */
+    border-radius: 5px; /* Esquinas redondeadas (opcional) */
+}
+.video-container {
+    display: flex; /* Usa flexbox para alinear los videos en una fila */
+    justify-content: center; /* Centra los videos en la sección */
+    gap: 20px; /* Espacio entre los videos */
+}
+
+.video-container iframe {
+    width: 400px; /* Ajusta el ancho del video */
+    height: 300px; /* Ajusta la altura del video */
+    border-radius: 5px; /* Esquinas redondeadas (opcional) */
+}
+.logo img {
+    max-width: 150px; /* Ajusta el ancho máximo del logo */
+    height: auto; /* Mantiene la proporción de la imagen */
+}

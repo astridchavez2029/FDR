@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="contactanos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\chave\OneDrive\Escritorio - copia\DISEÑO WEB ASTRID\imagen\LOGO DEL FDR.png" alt="Logo de la institución FDR" />
+        </div>
+        <h1 class="titulo-header">Contacto</h1>
+        <nav>
+            <ul>
+                <li><a href="menu.html">Inicio</a></li>
+                <li><a href="oferta.html">Oferta académica</a></li>
+                <li><a href="instalacion.html">Instalaciones</a></li>
+                <li><a href="contacto.html" class="active">Contáctanos</a></li>
+                <li><a href="nosotros.html">Acerca de nosotros</a></li>
+                <li><a href="promo.html">Promo 2024</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="contact-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2024 Tu Nombre.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            if (!nombre || !email || !mensaje) {
+                alert('Por favor, completa todos los campos.');
+                event.preventDefault(); // Evitar el envío si hay un campo vacío
+            } else {
+                const subject = `Nuevo mensaje de ${nombre}`;
+                const body = `Nombre: ${nombre}\nCorreo: ${email}\nMensaje: ${mensaje}`;
+                window.location.href = `mailto:tuemail@ejemplo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                event.preventDefault(); // Evitar el envío del formulario normal
+            }
+        });
+    </script>
+</body>
+</html>
